@@ -6,17 +6,16 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public GameState currentState;
+    
+    public PlayerInput playerInput;    
+    
     public enum GameState
     {
         Iniciando,
         MenuPrincipal,
         Gameplay
     }
-
-    public GameState currentState;
-
-    [Header("Player Input")]
-    public PlayerInput playerInput;
 
     private void Awake()
     {
@@ -34,7 +33,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         ChangeState(GameState.Iniciando);
-        LoadScene("Splash");
+        SceneManager.LoadScene("Splash");
     }
 
     public void ChangeState(GameState newState)
@@ -45,9 +44,33 @@ public class GameManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        switch (sceneName)
+        {
+            case "Splash":
+                SceneManager.LoadScene(sceneName);
+                break;
+
+            case "MenuPrincipal":
+                SceneManager.LoadScene(sceneName);
+                ChangeState(GameState.MenuPrincipal);
+                break;
+
+            case "GetStarted_Scene":
+                SceneManager.LoadScene(sceneName);
+                ChangeState(GameState.Gameplay);
+                break;
+
+            default:
+                Debug.LogWarning("Cena não reconhecida: " + sceneName);
+                break;
+        }
     }
 
+    public void LoadMenu()
+    {
+        LoadScene("MenuPrincipal");
+    }
+    
     public void AssignPlayerInput(PlayerInput input)
     {
         playerInput = input;

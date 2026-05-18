@@ -4,7 +4,6 @@ public class MenuUI : MonoBehaviour
 {
     public void StartGame()
     {
-        GameManager.Instance.ChangeState(GameManager.GameState.Gameplay);
         GameManager.Instance.LoadScene("GetStarted_Scene");
     }
 
