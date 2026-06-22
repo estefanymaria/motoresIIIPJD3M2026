@@ -120,6 +120,8 @@ public bool IsRespawning { get; set; } = false;
 
         private bool _hasAnimator;
 
+        private int _coinCount = 0;
+
         private bool IsCurrentDeviceMouse
         {
             get
@@ -428,7 +430,11 @@ public bool IsRespawning { get; set; } = false;
 
     Debug.Log($"Camera Yaw reset to {targetYaw} degrees.");
 }
+        public void CollectCoin()
+        {
+            _coinCount++;
+            PlayerObserverManager.NotifyCoinCollected(_coinCount);
+            Debug.Log("Moedas: " + _coinCount);
+        }
     }
-
-    
 }
