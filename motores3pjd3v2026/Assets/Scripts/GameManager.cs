@@ -57,6 +57,12 @@ public class GameManager : MonoBehaviour
 
             case "GetStarted_Scene":
                 SceneManager.LoadScene(sceneName);
+
+                SceneManager.LoadScene(
+                    "GUI",
+                    LoadSceneMode.Additive
+                );
+                
                 ChangeState(GameState.Gameplay);
                 break;
 
