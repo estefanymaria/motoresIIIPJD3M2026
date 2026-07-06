@@ -9,4 +9,6 @@ public class PlayerObserverManager : MonoBehaviour
     {
         OnCoinCollected?.Invoke(totalCoins);
     }
+    
+    
 }
