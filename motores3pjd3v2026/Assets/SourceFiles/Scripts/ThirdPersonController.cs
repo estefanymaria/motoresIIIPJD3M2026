@@ -119,7 +119,7 @@ public bool IsRespawning { get; set; } = false;
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
-
+        
         private int _coinCount = 0;
 
         private bool IsCurrentDeviceMouse
@@ -430,11 +430,21 @@ public bool IsRespawning { get; set; } = false;
 
     Debug.Log($"Camera Yaw reset to {targetYaw} degrees.");
 }
+
+        private void OnEnable()
+        {
+            PlayerObserverManager.OnCoinCollected += CollectCoin;
+        }
+
+        private void OnDisable()
+        {
+            PlayerObserverManager.OnCoinCollected -= CollectCoin;
+            
+        }
         public void CollectCoin()
         {
             _coinCount++;
-            PlayerObserverManager.NotifyCoinCollected(_coinCount);
-            Debug.Log("Moedas: " + _coinCount);
+            PlayerObserverManager.NotifyCoinCountChanged(_coinCount);
         }
     }
 }
