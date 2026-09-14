@@ -27,17 +27,6 @@
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "898ae154-cb6b-4c9b-8288-8c12cd2cd300",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "2D Vector",
                     "id": "53c1b0e5-58c2-48c1-89c8-fc88883bca9f",
                     "path": "2DVector",
@@ -54,7 +43,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Teclado e Mouse",
+                    "groups": ";Teclado e Mouse;Player1",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -65,7 +54,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Teclado e Mouse",
+                    "groups": ";Teclado e Mouse;Player1",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -76,7 +65,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Teclado e Mouse",
+                    "groups": ";Teclado e Mouse;Player1",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -87,7 +76,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Teclado e Mouse",
+                    "groups": ";Teclado e Mouse;Player1",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -109,7 +98,7 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Teclado e Mouse",
+                    "groups": ";Teclado e Mouse;Player2",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -120,7 +109,7 @@
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Teclado e Mouse",
+                    "groups": ";Teclado e Mouse;Player2",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -131,7 +120,7 @@
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Teclado e Mouse",
+                    "groups": ";Teclado e Mouse;Player2",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -142,7 +131,7 @@
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Teclado e Mouse",
+                    "groups": ";Teclado e Mouse;Player2",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -175,7 +164,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Teclado e Mouse",
+                    "groups": ";Teclado e Mouse;Player1",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -186,7 +175,7 @@
                     "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Teclado e Mouse",
+                    "groups": ";Teclado e Mouse;Player2",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -228,6 +217,28 @@
             "devices": [
                 {
                     "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Player1",
+            "bindingGroup": "Player1",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Player2",
+            "bindingGroup": "Player2",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
                     "isOptional": false,
                     "isOR": false
                 }
