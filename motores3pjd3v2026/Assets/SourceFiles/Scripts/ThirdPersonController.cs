@@ -441,9 +441,16 @@ public bool IsRespawning { get; set; } = false;
             PlayerObserverManager.OnCoinCollected -= CollectCoin;
             
         }
-        public void CollectCoin()
+        public void CollectCoin(GameObject player)
         {
+            if (player != gameObject)
+                return;
+            
             _coinCount++;
+
+            MoveSpeed += 0.5f;
+            SprintSpeed += 0.5f;
+            
             PlayerObserverManager.NotifyCoinCountChanged(_coinCount);
         }
     }

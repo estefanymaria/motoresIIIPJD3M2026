@@ -3,13 +3,13 @@ using System;
 
 public class PlayerObserverManager : MonoBehaviour
 {
-    public static Action OnCoinCollected;
+    public static Action<GameObject> OnCoinCollected;
 
     public static Action<int> OnCoinCountChanged;
 
-    public static void NotifyCoinCollected()
+    public static void NotifyCoinCollected(GameObject player)
     {
-        OnCoinCollected?.Invoke();
+        OnCoinCollected?.Invoke(player);
     }
 
     public static void NotifyCoinCountChanged(int amount)
