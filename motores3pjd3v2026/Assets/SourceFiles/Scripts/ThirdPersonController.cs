@@ -447,8 +447,12 @@ namespace StarterAssets
             if (player != gameObject)
                 return;
 
-            MoveSpeed += 0.5f;
-            SprintSpeed += 0.5f;
+            _coinCount++;
+
+            MoveSpeed += 1f;
+            SprintSpeed += 1f;
+
+            Debug.Log(gameObject.name + " possui " + _coinCount + " moedas.");
         }
     }
 }

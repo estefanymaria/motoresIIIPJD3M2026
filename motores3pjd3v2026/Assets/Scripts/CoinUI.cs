@@ -16,7 +16,7 @@ public class CoinUI : MonoBehaviour
 
     }
 
-    private void UpdateCoins(int amount)
+    private void UpdateCoins(GameObject player, int amount)
     {
         coinText.text = "Moedas: " + amount;
     }

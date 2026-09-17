@@ -1,4 +1,3 @@
-using StarterAssets;
 using UnityEngine;
 
 public class Coin : MonoBehaviour
@@ -6,8 +5,8 @@ public class Coin : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player"))
-            return; 
-        
+            return;
+
         PlayerObserverManager.NotifyCoinCollected(other.gameObject);
 
         Destroy(gameObject);
