@@ -40,8 +40,6 @@ public class Pickup : MonoBehaviour
             {
                 Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
             }
-            
-            PlayerObserverManager.NotifyCoinCollected(other.gameObject);
 
             // Destroy the star
             Destroy(gameObject);

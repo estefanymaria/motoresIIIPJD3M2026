@@ -3,9 +3,9 @@ using System;
 
 public class PlayerObserverManager : MonoBehaviour
 {
-    public static Action<GameObject> OnCoinCollected;
-
     public static Action<int> OnCoinCountChanged;
+    
+    public static Action<GameObject> OnCoinCollected;
 
     public static void NotifyCoinCollected(GameObject player)
     {

@@ -8,7 +8,7 @@ public class Coin : MonoBehaviour
         if (!other.CompareTag("Player"))
             return; 
         
-        PlayerObserverManager.NotifyCoinCollected();
+        PlayerObserverManager.NotifyCoinCollected(other.gameObject);
 
         Destroy(gameObject);
     }
