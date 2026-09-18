@@ -7,8 +7,10 @@ public class Coin : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
-        PlayerObserverManager.NotifyCoinCollected(other.gameObject);
-
+        PlayerObserverManager.NotifyCoinCollected(other.transform.parent.gameObject);
+        
+        WinnerManager.Instance.CoinCollected();
+        
         Destroy(gameObject);
     }
 }

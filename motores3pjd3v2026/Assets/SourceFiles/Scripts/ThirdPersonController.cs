@@ -117,6 +117,8 @@ namespace StarterAssets
         private bool _hasAnimator;
 
         private int _coinCount = 0;
+        
+        public int CoinCount => _coinCount;
 
         private bool IsCurrentDeviceMouse
         {
@@ -444,14 +446,16 @@ namespace StarterAssets
 
         private void CollectCoin(GameObject player)
         {
-            if (player != gameObject)
+            if (player != transform.parent.gameObject)
                 return;
-
+            
             _coinCount++;
 
             MoveSpeed += 1f;
             SprintSpeed += 1f;
-
+            
+            PlayerObserverManager.NotifyCoinCountChanged(transform.parent.gameObject, _coinCount);
+            
             Debug.Log(gameObject.name + " possui " + _coinCount + " moedas.");
         }
     }

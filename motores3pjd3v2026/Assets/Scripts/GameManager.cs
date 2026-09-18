@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public GameState currentState;
     
-    public PlayerInput playerInput;    
+    public PlayerInput playerInput;   
     
     public enum GameState
     {
