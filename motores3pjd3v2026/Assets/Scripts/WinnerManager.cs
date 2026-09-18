@@ -30,8 +30,20 @@ public class WinnerManager : MonoBehaviour
         {
             ThirdPersonController[] players = FindObjectsOfType<ThirdPersonController>();
 
-            int player1 = players[0].CoinCount;
-            int player2 = players[1].CoinCount;
+            int player1 = 0;
+            int player2 = 0;
+
+            foreach (ThirdPersonController player in players)
+            {
+                if (player.transform.parent.name.StartsWith("PlayerRobot (1)"))
+                {
+                    player2 = player.CoinCount;
+                }
+                else
+                {
+                    player1 = player.CoinCount;
+                }
+            }
 
             if (player1 > player2)
             {
