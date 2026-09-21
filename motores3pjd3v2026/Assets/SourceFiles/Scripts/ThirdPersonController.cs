@@ -1,6 +1,7 @@
 ﻿ using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
+ using StarterAssets;
 #endif
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
@@ -450,9 +451,6 @@ namespace StarterAssets
                 return;
             
             _coinCount++;
-
-            MoveSpeed += 1f;
-            SprintSpeed += 1f;
             
             PlayerObserverManager.NotifyCoinCountChanged(transform.parent.gameObject, _coinCount);
             

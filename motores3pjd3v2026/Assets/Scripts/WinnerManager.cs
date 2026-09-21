@@ -8,25 +8,30 @@ public class WinnerManager : MonoBehaviour
 
     public GameObject winnerPanel;
     public TextMeshProUGUI winnerText;
-    private int remainingCoins;
+
+    private int remainingStars;
 
     private void Awake()
     {
         Instance = this;
     }
-    
+
     private void Start()
     {
-        remainingCoins = FindObjectsOfType<Coin>().Length;
+        Pickup[] stars = FindObjectsOfType<Pickup>();
+
+        remainingStars = stars.Length;
+
+        Debug.Log("Total de estrelas: " + remainingStars);
     }
-    
-    public void CoinCollected()
+
+    public void StarCollected()
     {
-        remainingCoins--;
+        remainingStars--;
 
-        Debug.Log("Restam " + remainingCoins + " estrelas.");
+        Debug.Log("Restam " + remainingStars + " estrelas.");
 
-        if (remainingCoins <= 0)
+        if (remainingStars <= 0)
         {
             ThirdPersonController[] players = FindObjectsOfType<ThirdPersonController>();
 
@@ -55,7 +60,7 @@ public class WinnerManager : MonoBehaviour
             }
             else
             {
-                ShowWinner("DRAW!");
+                ShowWinner("EMPATE!");
             }
         }
     }

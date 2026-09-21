@@ -1,4 +1,5 @@
 using UnityEngine;
+using StarterAssets;
 
 public class Coin : MonoBehaviour
 {
@@ -7,10 +8,14 @@ public class Coin : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
-        PlayerObserverManager.NotifyCoinCollected(other.transform.parent.gameObject);
-        
-        WinnerManager.Instance.CoinCollected();
-        
+        ThirdPersonController controller = other.GetComponent<ThirdPersonController>();
+
+        if (controller != null)
+        {
+            controller.MoveSpeed += 1f;
+            controller.SprintSpeed += 1f;
+        }
+
         Destroy(gameObject);
     }
 }
